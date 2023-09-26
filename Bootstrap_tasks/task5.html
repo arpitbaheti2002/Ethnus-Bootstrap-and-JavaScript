@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Task 5</title>
+  </head>
+  <body class="w-50 mx-auto m-5">
+
+    <form class="row g-3 bg-body-secondary p-2" novalidate>
+      <label for="FirstName" class="col-sm-3 col-form-label h5">First Name</label>
+      <div class="col-sm-9">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><img src="https://banner2.cleanpng.com/20180707/puq/kisspng-computer-icons-avatar-clip-art-5b40601d5c8c75.9330992415309455653791.jpg" height="20px"></span>
+          <input type="text" class="form-control" id="FirstName" name="first_name" required>
+          <div class="invalid-feedback">Please supply your first name</div>
+        </div>
+      </div>
+      <label for="LasttName" class="col-sm-3 col-form-label h5">Last Name</label>
+      <div class="col-sm-9">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><img src="https://banner2.cleanpng.com/20180707/puq/kisspng-computer-icons-avatar-clip-art-5b40601d5c8c75.9330992415309455653791.jpg" height="20px"></span>
+          <input type="text" class="form-control" id="LastName" name="last_name" required>
+          <div class="invalid-feedback">Please supply your last name</div>
+        </div>
+      </div>
+      <label for="Email" class="col-sm-3 col-form-label h5">E-mail</label>
+      <div class="col-sm-9">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><img src="https://png.pngtree.com/png-clipart/20191120/original/pngtree-email-icon-png-image_5065641.jpg" height="20px"></span>
+          <input type="email" class="form-control" id="Email" name="email" required>
+          <div class="invalid-feedback">Please supply your email address</div>
+        </div>
+      </div>
+      <label for="Phone" class="col-sm-3 col-form-label h5">Phone #</label>
+      <div class="col-sm-9">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><img src="https://image.similarpng.com/very-thumbnail/2021/01/Call-icon-on-transparent-background-PNG.png" height="20px"></span>
+          <input type="number" class="form-control" id="Phone" name="phone" required>
+          <div class="invalid-feedback">Please supply your phone number</div>
+        </div>
+      </div>
+      <label for="Address" class="col-sm-3 col-form-label h5">Address</label>
+      <div class="col-sm-9">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><img src="https://www.clipartmax.com/png/small/2-21103_home-house-silhouette-icon-building-transparent-background-home-icon.png" height="20px"></span>
+          <input type="text" class="form-control" id="Address" name="address" required>
+          <div class="invalid-feedback">Please supply your address</div>
+        </div>
+      </div>
+      <label for="City" class="col-sm-3 col-form-label h5">City</label>
+      <div class="col-sm-9">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><img src="https://www.clipartmax.com/png/small/2-21103_home-house-silhouette-icon-building-transparent-background-home-icon.png" height="20px"></span>
+          <input type="text" class="form-control" id="City" name="city" required>
+          <div class="invalid-feedback">Please supply your city</div>
+        </div>
+      </div>
+
+      <label for="Hosting" class="col-sm-4 col-form-label h5">Do you have hosting?</label>
+      <div class="col-sm-8">
+        <input type="radio" name="hosting" value="yes"> Yes <br>
+        <input type="radio" name="hosting" value="no"> No
+      </div>
+      <label for="Description" class="col-sm-4 col-form-label h5">Project Description</label>
+      <div class="col-sm-8">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><img src="https://www.vhv.rs/dpng/d/182-1826498_transparent-pencil-icon-png-pencil-ico-png-download.png" height="25px"></span>
+          <textarea cols="43"></textarea>
+        </div>
+      </div>
+
+      <div class="col-12 text-center">
+        <button class="btn btn-warning" type="button" onclick="validateForm()">Send
+          <img src="images/plane.png" height="30px">
+        </button>
+      </div>
+    </form>
+
+    <script>
+      function validateForm() {
+        // Get all input elements with the "required" attribute
+        var requiredInputs = document.querySelectorAll('input[required]');
+        
+        // Initialize a flag to track overall form validity
+        var isFormValid = true;
+
+        // Loop through each required input
+        requiredInputs.forEach(function(input) {
+          if (!input.checkValidity()) {
+            // If any input is invalid, set the form validity flag to false
+            isFormValid = false;
+            // Display the validation feedback
+            input.classList.add("is-invalid");
+          }
+        });
+
+        if (isFormValid) {
+          // Form is valid, you can proceed with form submission or other actions here
+          alert("Form is valid. Submitting...");
+        }
+      }
+    </script>
+
+  </body>
+</html>
